@@ -1,6 +1,8 @@
-# dotfiles
+# sromeroi's dotfiles 
 
-Dotfiles for $HOME. Includes common setups for bash prompts (.termcolors.sh), bash variables (.vars.sh), GIT config (.gitconfig), TMUX, etc. This allows to maintain the same config base for several client and server machines, uploading changes to github to keep them under version control.
+Dotfiles for `$HOME`. Includes common setups for bash prompts (`.termcolors.sh`), bash variables (`.vars.sh`), GIT config (`.gitconfig`), TMUX (`.tmux.conf`), etc. This allows to maintain the same config base for several client and server machines, uploading changes to github to keep them under version control.
+
+Note that my Vim configuration is not included in this dotfiles setup (it's in a separate vimfiles repository).
 
 Fork this repository to have your our "dotfiles" system.
 
