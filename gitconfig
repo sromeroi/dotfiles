@@ -1,0 +1,15 @@
+[user]
+	name = Santiago Romero
+	email = sromero@gmail.com
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
+[alias]
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	graphlog = log --pretty=oneline --graph
+	visual = !gitk
+	lg = log --graph --pretty=format:'%C(auto)%h -%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[push]
+	default = simple
