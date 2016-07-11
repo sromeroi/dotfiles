@@ -1,7 +1,7 @@
 " sromeroi vimrc settings
 "----------------------------------------------------------------------
 " Author: Santiago Romero - @sromeroi
-"         http://github.com/sromeroi/vimfiles
+"         http://github.com/sromeroi/dotfiles
 "
 " CHANGELOG:
 "
@@ -303,13 +303,15 @@ if &t_Co == 256 || has("gui_running")
     let s:myscheme = "molokai"
 
     " Check if colour scheme is present
-    let s:schemepath = s:scriptpath . '/bundle/' . s:myscheme . '/colors/' . s:myscheme . '.vim'
+    "let s:schemepath = s:scriptpath . '/bundle/' . s:myscheme . '/colors/' . s:myscheme . '.vim'
+    let s:schemepath = $HOME . '/.vim/bundle/' . s:myscheme . '/colors/' . s:myscheme . '.vim'
     if filereadable( s:schemepath )
         exec "colorscheme " . s:myscheme
     endif
 
     " Check if custom changes to this schema are present
-    let s:customcolors = s:scriptpath . '/colors/' . s:myscheme . '_custom.vim'
+    "let s:customcolors = s:scriptpath . '/colors/' . s:myscheme . '_custom.vim'
+    let s:schemepath = $HOME . '/.vim/colors/' . s:myscheme . '/_custom.vim'
     if filereadable( s:customcolors )
         exec "source " . s:customcolors
     endif
