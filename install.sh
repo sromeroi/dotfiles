@@ -2,6 +2,17 @@
 #
 # Setup the vimfiles repository: downloads Vundle, 
 #
+# mkdir ~/.bash && cd ~/.bash && git clone git://github.com/jimeh/git-aware-prompt.git 
+# cd $HOME && git clone https://github.com/sromeroi/dotfiles .dotfiles
+# cd .dotfiles && sh install.sh
+# vim .git/config
+## Add sromeroi@ to URL
+#
+# vim ~/.bashrc
+## Add:
+# source ~/.termcolors.sh
+# source ~/.vars.sh
+#
 
 NOW=$(date +%Y%m%d_%H%M)
 
