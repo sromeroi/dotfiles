@@ -5,7 +5,7 @@
 
 echo -e "\n--- Update Vundle plugins ---"
 
-if [ ! -e vimrc ] || [ ! -e install.sh ];
+if [ ! -e install.sh ];
 then
     echo -e "\nERROR: You must be inside the .vim directory to launch install.sh.\n"
     exit 1
