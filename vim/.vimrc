@@ -5,6 +5,9 @@
 "
 " CHANGELOG:
 "
+" v1.2     2016-07-11
+"          * Switched to dotfiles + stow
+"
 " v1.1     2015-03-29
 "          * Several changes to vimrc, added update/clean scripts.
 "
@@ -223,8 +226,6 @@ let g:netrw_liststyle=3
 nmap <leader>e :Explore<CR>
 map <leader>e <ESC>:Explore<CR>
 
-
-
 " Open nertree automatically on vim startup
 " autocmd vimenter * NERDTree
 " Then go to previous (last accessed) window.
@@ -311,9 +312,9 @@ if &t_Co == 256 || has("gui_running")
 
     " Check if custom changes to this schema are present
     "let s:customcolors = s:scriptpath . '/colors/' . s:myscheme . '_custom.vim'
-    let s:customcolors = $HOME . '/.vim/colors/' . s:myscheme . '/_custom.vim'
+    let s:customcolors = $HOME . '/.vim/colors/' . s:myscheme . '_custom.vim'
     if filereadable( s:customcolors )
-        exec "source " . s:customcolors
+       exec "source " . s:customcolors
     endif
     "set colorcolumn=80
 
@@ -332,3 +333,4 @@ endif
 
 """ searchant.vim
 highlight SearchCurrent ctermbg=LightGreen ctermfg=black
+
