@@ -16,7 +16,7 @@ fi
 echo -e "\n* Symlinking files..."
 
 # Files: make a backup. Symlinks: check if they're already OK
-for FILE in tmux.conf termcolors.sh vars.sh gitconfig ; do
+for FILE in tmux.conf termcolors.sh vars.sh ; do
     if [ -f ~/.${FILE} ] && [ ! -L ~/.${FILE} ];
     then
         mv ~/.${FILE} ~/${FILE}.${NOW}

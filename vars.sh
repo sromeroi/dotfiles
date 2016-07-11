@@ -11,6 +11,16 @@ LC_ADDRESS="en_US.UTF-8"
 LC_TELEPHONE="en_US.UTF-8"
 LC_MEASUREMENT="en_US.UTF-8"
 
-export VISUAL=/usr/bin/vim
-export EDITOR=/usr/bin/vim
+export HISTCONTROL=ignoreboth
+alias push="pushd ."
+alias pop="popd"
+
+if [ "$TERM" == "xterm" ]; then
+    # No it isn't, it's gnome-terminal
+    export TERM=xterm-256color
+fi
+
+export EDITOR="vim"
+export VISUAL="vim"
 set -o emacs
+

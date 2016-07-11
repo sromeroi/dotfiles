@@ -10,5 +10,5 @@ Then clone your repository in your HOME with:
 
     git clone https://github.com/YOURUSER/dotfiles.git .dotfiles
 
-The `install.sh` script will symlink each file in the .dotfiles folder to $HOME (example: `~/.tmux.conf` will point to `~/.dotfiles/tmux.conf`).
+The `install.sh` script will symlink each file in the .dotfiles folder to $HOME (example: `~/.tmux.conf` will point to `~/.dotfiles/tmux.conf`) except for gitconfig (I need different configs but I want to keep track of this file).
 
