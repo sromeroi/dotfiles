@@ -311,7 +311,7 @@ if &t_Co == 256 || has("gui_running")
 
     " Check if custom changes to this schema are present
     "let s:customcolors = s:scriptpath . '/colors/' . s:myscheme . '_custom.vim'
-    let s:schemepath = $HOME . '/.vim/colors/' . s:myscheme . '/_custom.vim'
+    let s:customcolors = $HOME . '/.vim/colors/' . s:myscheme . '/_custom.vim'
     if filereadable( s:customcolors )
         exec "source " . s:customcolors
     endif
