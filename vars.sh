@@ -24,3 +24,10 @@ export EDITOR="vim"
 export VISUAL="vim"
 set -o emacs
 
+# mkdir ~/.bash && cd ~/.bash && git clone git://github.com/jimeh/git-aware-prompt.git
+if [ -e ${HOME}/.bash/git-aware-prompt ];
+then
+    export GITAWAREPROMPT=${HOME}/.bash/git-aware-prompt
+    source "${GITAWAREPROMPT}/main.sh"
+fi
+
