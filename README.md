@@ -4,17 +4,30 @@ Dotfiles for `$HOME`. Includes common setups for bash prompts (`.termcolors.sh`)
 
 Note that my Vim configuration is not included in this dotfiles setup (it's in a separate vimfiles repository).
 
-Fork this repository to have your our "dotfiles" system.
 
-Then clone your repository in your HOME with:
+## Installation
+
+Requires GIT and GNU Stow:
+
+1.- Fork this repository to have your our "dotfiles" system.
+
+2.- Then clone your repository in your HOME with:
 
     git clone https://github.com/YOURUSER/dotfiles.git .dotfiles
 
-The `install.sh` script will symlink each file in the .dotfiles folder to $HOME (example: `~/.tmux.conf` will point to `~/.dotfiles/tmux.conf`) except for gitconfig (I need different configs but I want to keep track of this file).
+3.- Backup your current configuration files and rename/remove them from your HOME.
 
-Remember to edit `~/.bashrc` and add:
+4.- Enter inside the .dotfiles folder and use stow tool to create the symlinks for the configuration files you want to keep into dotfiles.
+
+    stow bash
+    stow tmux
+    stow (etc...)
+
+5.- Use the files where desired. Example, edit `~/.bashrc` and add:
 
     source ~/.termcolors.sh
     source ~/.vars.sh
+
+6.- Profit!
 
 
