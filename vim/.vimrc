@@ -292,6 +292,12 @@ nmap <leader>L <ESC>:source ~/vim_session<CR>
 "noremap <Left> <nop>
 "noremap <Right> <nop>
 
+""" Filter lines containing or not containing string
+" :g/PATTERN/d       (Use d_ to copy to blackhole register and save time).
+" :g!/PATTERN/d      (or :v/PATTERN/d)
+" :g/pATTERN/t$      ->  Copy all lines matching a pattern to end of file.
+" :g/PATTERN/m$      ->  Move all lines matching a pattern to end of file.
+
 " Colours
 if &t_Co > 2 || has("gui_running")
     syntax on
