@@ -44,13 +44,16 @@ Plugin 'mileszs/ack.vim'
 Plugin 'vim-scripts/Command-T'
 Plugin 'kien/ctrlp.vim'
 Plugin 'sjl/gundo.vim'
+Plugin 'airblade/vim-gitgutter'
 "Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
 "Plugin 'vim-scripts/TaskList.vim'
 Plugin 'vim-scripts/ShowMarks'
 Plugin 'vim-scripts/bufkill.vim'
 Plugin 'garbas/vim-snipmate'
-Plugin 'troydm/easybuffer.vim'
+" Replaced with buftabline
+"Plugin 'troydm/easybuffer.vim'
+Plugin 'ap/vim-buftabline'
 Plugin 'AndrewRadev/undoquit.vim'
 "Plugin 'dahu/Insertlessly'
 " Snipmate requirements:
@@ -70,9 +73,7 @@ Plugin 'morhetz/gruvbox'
 call vundle#end()
 filetype plugin indent on
 
-"----------------------------------------------------------------------
-" Generic options
-"----------------------------------------------------------------------
+""" Generic options
 set nobackup
 set ruler
 set novisualbell
@@ -99,12 +100,12 @@ set history=1000
 "set noswapfile
 set hidden
 
-" Paste mode (also works :r !cat + paste + Ctrl+D)
+""" Paste mode (also works :r !cat + paste + Ctrl+D)
 set pastetoggle=<F12>
 set encoding=utf-8
 set backspace=indent,eol,start
 
-" Save as root by using sudo with w!!
+""" Save as root by using sudo with w!!
 cmap w!! w !sudo tee % >/dev/null
 
 " On wrapped lines, go up and down in the same line (THANKS Vincent Driessen!)
@@ -114,22 +115,22 @@ nnoremap k gk
 let mapleader=","
 filetype plugin on
 
-" removed ,javascript,
+""" removed ,javascript,
 autocmd FileType html,css,sass,scss,json
       \ setlocal shiftwidth=2 softtabstop=2
 
-" See trailing spaces (and remove EOL's $). Toggle with ,h
+""" See trailing spaces (and remove EOL's $). Toggle with ,h
 set nolist
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 nmap <leader>h <ESC>:set list!<CR>
 
-" Remove trailing spaces at EOL
+""" Remove trailing spaces at EOL
 nnoremap <silent> <leader>ds :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
-" Hide search results
+""" Hide search results
 nmap <silent> <leader>/ :nohlsearch<CR>
 
-" Tab completion. Use CTRL+V and TAB to insert a real tab.
+""" Tab completion. Use CTRL+V and TAB to insert a real tab.
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
@@ -143,7 +144,7 @@ nmap <F7> <ESC>:sign unplace *<CR>:delm!<CR>:delm A-Z0-9<CR>
 nmap <leader>hs <ESC>:sign unplace *<CR>:delm!<CR>:delm A-Z0-9<CR>
 
 """ Toggle Relative and Absolute line numbers
-" Enable / Disable line numbers
+""" Enable / Disable line numbers
 nmap <leader>n1 <Esc>:set nu<CR>:set rnu<CR>
 nmap <leader>n0 <Esc>:set nonu<CR>:set nornu<CR>
 nnoremap <F3> :NumbersToggle<CR>
@@ -161,11 +162,10 @@ if has("autocmd")
         \ endif
 endif
 
-" Vim plugins!
+""" Vim plugins!
 map <leader>td <Plug>TaskList
 map <leader>todo <Plug>TaskList
 map <leader>tasklist <Plug>TaskList
-"map <leader>g :GundoToggle<CR>
 "map <leader>ch <ESC>:SyntasticToggleMode<CR>
 map <leader>ch <ESC>:SyntasticCheck<CR> :SyntasticToggleMode<CR>
 let g:syntastic_check_on_open = 0
@@ -173,7 +173,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_quiet_messages = { "type": "style" }
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
-" Or :UndoQuit
+""" Or :UndoQuit
 let g:undoquit_mapping = '<C-W>u'
 
 let g:tagbar_width = 30
@@ -182,24 +182,21 @@ nmap <leader>tags :TagbarToggle<CR>
 nmap <leader>tagbar :TagbarToggle<CR>
 map <F8> <ESC>:TagbarToggle<CR>
 
-"imap <C-C> <Plug>snipMateNextOrTrigger
-"smap <C-C> <Plug>snipMateNextOrTrigger
-
-" Split windows Ctrl+w - v and Ctrl+w - s and
-"               Ctrl+w - cursor to change
-" Use Ctrl+w - q to close current windiow.
-" Maps for Ctrl+h/j/k/l to move.
-" Ctrl+w _ = maximize current window (all others to size=1)
-" Ctrl+w = = equal size for all windows
-" Ctrl+w + and - = resize current window
+""" Split windows Ctrl+w - v and Ctrl+w - s and
+"""               Ctrl+w - cursor to change
+""" Use Ctrl+w - q to close current windiow.
+""" Maps for Ctrl+h/j/k/l to move.
+""" Ctrl+w _ = maximize current window (all others to size=1)
+""" Ctrl+w = = equal size for all windows
+""" Ctrl+w + and - = resize current window
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
-" Buffer plugins. Use :e file to open a new buffer then :bX to change
-" to buffer X. With :bd you delete the current buffer and with :buffers
-" you can see a buffer list.
+""" Buffer plugins. Use :e file to open a new buffer then :bX to change
+""" to buffer X. With :bd you delete the current buffer and with :buffers
+""" you can see a buffer list.
 "map <c-b> :b
 map <leader>o :bp<CR>
 map <leader>p :bn<CR>
@@ -208,14 +205,28 @@ map <leader><left> :bp<CR>
 map <leader><right> :bn<CR>
 nmap <leader>b :EasyBuffer<CR>
 
-" Insert blank line between lines for readability purposes (logs)
+""" Insert blank line between lines for readability purposes (logs)
 map <leader>G <ESC>set noai<CR><ESC>:g/.\n\n\@!/norm o<CR>
 
-" Nerd Tree
+""" Vim-buftabline
+nnoremap <C-N> :bprev<CR>
+nnoremap <C-M> :bnext<CR>
+nnoremap <C-D> :bd<CR>
+nnoremap <C-S-D> :bd!<CR>
+
+""" Nerd Tree (Disabled: now using native Vim Explorer instead)
 "let g:NERDTreeWinPos = "right"
 "let g:NERDTreeWinSize = 25
 "nmap <leader>n :NERDTreeToggle<CR>
 "map <F1> <ESC>:NERDTreeToggle<CR>
+" autocmd vimenter * NERDTree                 " Open nertree automatically on vim startup
+" autocmd VimEnter * w,incmd p                " Then go to previous (last accessed) window. 
+""" Open nerdtree automatically if no file is specified
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+""" Close vim if nertree is the only window opened
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&
+"        \ b:NERDTreeType == "primary") | q! | endif
 
 """ Vim Explorer (replaces Nerd Tree)
 " d = create new directory
@@ -225,26 +236,16 @@ map <leader>G <ESC>set noai<CR><ESC>:g/.\n\n\@!/norm o<CR>
 " c-w = + - resize splits to be the same (=), or alter size (+/-)
 let g:netrw_liststyle=3
 nmap <leader>e :Explore<CR>
+nmap <leader>nt :Explore<CR>
 map <leader>e <ESC>:Explore<CR>
+autocmd FileType netrw setl bufhidden=wipe
 
-" Open nertree automatically on vim startup
-" autocmd vimenter * NERDTree
-" Then go to previous (last accessed) window.
-" autocmd VimEnter * w,incmd p
 
-" Open nerdtree automatically if no file is specified
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" Close vim if nertree is the only window opened
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&
-        \ b:NERDTreeType == "primary") | q! | endif
-
-" Fuzzy search
+""" Fuzzy search
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-" vim-autoclose
+""" vim-autoclose
 let b:AutoCloseOn = 0
 nmap <leader>ac <ESC>:AutoCloseToggle<CR>
 nmap <leader>autoclose <ESC>:AutoCloseToggle<CR>
@@ -298,7 +299,7 @@ nmap <leader>L <ESC>:source ~/vim_session<CR>
 " :g/pATTERN/t$      ->  Copy all lines matching a pattern to end of file.
 " :g/PATTERN/m$      ->  Move all lines matching a pattern to end of file.
 
-" Colours
+""" Colours
 if &t_Co > 2 || has("gui_running")
     syntax on
 endif
@@ -338,6 +339,6 @@ if &t_Co == 256 || has("gui_running")
     endif
 endif
 
-""" searchant.vim
+""" searchant.vim -> set color of the current search ocurrence
 highlight SearchCurrent ctermbg=LightGreen ctermfg=black
 
