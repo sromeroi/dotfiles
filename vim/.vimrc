@@ -234,6 +234,7 @@ nnoremap <C-S-D> :bd!<CR>
 " o and v = opens the file in a horizontal or vertical split
 " c-w = + - resize splits to be the same (=), or alter size (+/-)
 let g:netrw_liststyle=3
+let g:netrw_altv=1
 nmap <leader>e :Explore<CR>
 nmap <leader>n :Explore<CR>
 map <leader>e <ESC>:Explore<CR>
