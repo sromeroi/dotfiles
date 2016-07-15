@@ -198,12 +198,11 @@ map <c-h> <c-w>h
 """ to buffer X. With :bd you delete the current buffer and with :buffers
 """ you can see a buffer list.
 "map <c-b> :b
-map <leader>o :bp<CR>
-map <leader>p :bn<CR>
+map <leader>o :bprev<CR>
+map <leader>p :bnext<CR>
 map <leader>D :BD<CR>
-map <leader><left> :bp<CR>
-map <leader><right> :bn<CR>
-nmap <leader>b :EasyBuffer<CR>
+map <leader><left> :bprev<CR>
+map <leader><right> :bnext<CR>
 
 """ Insert blank line between lines for readability purposes (logs)
 map <leader>G <ESC>set noai<CR><ESC>:g/.\n\n\@!/norm o<CR>
@@ -236,7 +235,7 @@ nnoremap <C-S-D> :bd!<CR>
 " c-w = + - resize splits to be the same (=), or alter size (+/-)
 let g:netrw_liststyle=3
 nmap <leader>e :Explore<CR>
-nmap <leader>nt :Explore<CR>
+nmap <leader>n :Explore<CR>
 map <leader>e <ESC>:Explore<CR>
 autocmd FileType netrw setl bufhidden=wipe
 
@@ -278,7 +277,6 @@ autocmd BufNewFile,BufReadPost *.md set filetype=mkd
 """ Autosave file folds
 set foldmethod=manual
 set viewoptions=folds
-
 
 """ Allow save and load tab status on Windows and Mac GUI:
 nmap <leader>S <ESC>:mksession! ~/vim_session<CR>
