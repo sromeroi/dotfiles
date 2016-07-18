@@ -13,6 +13,9 @@
 " Disable toolbar
 set guioptions-=T
 
+" Right click opens contextual menu (copy/paste/etc)
+set mousemodel=popup
+
 " Some helpers to move among tabs
 function MoveTabLeft()
    let tab_number = tabpagenr() - 1
