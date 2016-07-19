@@ -111,6 +111,7 @@ cmap w!! w !sudo tee % >/dev/null
 " On wrapped lines, go up and down in the same line (THANKS Vincent Driessen!)
 nnoremap j gj
 nnoremap k gk
+nnoremap dl dd
 
 let mapleader=","
 filetype plugin on
@@ -123,6 +124,7 @@ autocmd FileType html,css,sass,scss,json
 set nolist
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 nmap <leader>h <ESC>:set list!<CR>
+" Replace tabs with spaces with :retab
 
 """ Remove trailing spaces at EOL
 nnoremap <silent> <leader>ds :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
@@ -196,18 +198,20 @@ map <c-h> <c-w>h
 
 """ Buffer plugins. Use :e file to open a new buffer then :bX to change
 """ to buffer X. With :bd you delete the current buffer and with :buffers
-""" you can see a buffer list.
+""" or :ls you can see a buffer list. Use :enew to open a new, empty buffer.
 "map <c-b> :b
 map <leader>o :bprev<CR>
 map <leader>p :bnext<CR>
 map <leader>D :BD<CR>
 map <leader><left> :bprev<CR>
 map <leader><right> :bnext<CR>
+"gf open filename under cursor
 
 """ Insert blank line between lines for readability purposes (logs)
 map <leader>G <ESC>set noai<CR><ESC>:g/.\n\n\@!/norm o<CR>
 
-""" Vim-buftabline
+""" Buffers + Vim-buftabline
+nnoremap <leader>b :enew<CR>
 nnoremap <C-N> :bprev<CR>
 nnoremap <C-M> :bnext<CR>
 nnoremap <C-D> :bd<CR>
@@ -233,6 +237,7 @@ nnoremap <C-S-D> :bd!<CR>
 " D and R = Delete or Rename directory or file
 " o and v = opens the file in a horizontal or vertical split
 " c-w = + - resize splits to be the same (=), or alter size (+/-)
+" / = find a file inside the buffer
 let g:netrw_liststyle=3
 let g:netrw_altv=1
 nmap <leader>e :Explore<CR>
