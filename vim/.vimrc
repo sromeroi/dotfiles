@@ -298,10 +298,23 @@ nmap <leader>L <ESC>:source ~/vim_session<CR>
 "noremap <Right> <nop>
 
 """ Filter lines containing or not containing string
-" :g/PATTERN/d       (Use d_ to copy to blackhole register and save time).
-" :g!/PATTERN/d      (or :v/PATTERN/d)
-" :g/pATTERN/t$      ->  Copy all lines matching a pattern to end of file.
-" :g/PATTERN/m$      ->  Move all lines matching a pattern to end of file.
+" :g/PATTERN/d        (Use d_ to copy to blackhole register and save time).
+" :g!/PATTERN/d       (or :v/PATTERN/d)
+" :g/PATTERN/t$       ->  Copy all lines matching a pattern to end of file.
+" :g/PATTERN/m$       ->  Move all lines matching a pattern to end of file.
+" :g/PATTERN/s/^/\/\/ ->  Add // at the beginning of each line matching pattern.
+
+""" Tricks from https://blog.petrzemek.net/2016/04/06/things-about-vim-i-wish-i-knew-earlier/
+
+""" Quickly select the text that was just pasted. Ex: to indent it after pasting.
+noremap gV `[v`]
+
+""" Stay in visual mode when indenting.
+vnoremap < <gv
+vnoremap > >gv
+
+""" Make Y yank everything from the cursor to the end of the line (like C or D).
+noremap Y y$
 
 """ Colours
 if &t_Co > 2 || has("gui_running")
