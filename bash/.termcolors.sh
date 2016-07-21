@@ -42,7 +42,7 @@ then
 # dfs-sgf01qa-82
 elif [[ "${HOSTNAME}" == "dfs-sgf01qa-82" ]];
 then
-    if [[ "${USER}" == "sromero" ]] || [[ "${USER}" == "sagedev" ]]; then
+    if [[ "${USER}" == "sromero" ]] || [[ "${USER}" == "sage" ]]; then
         export PS1="${L_YELLOW}\u@\H:${BLUE} \w ${PURPLE}\$git_branch${RED}\$git_dirty ${GREEN}\$${NORMAL} "
     elif [[ "${USER}" == "root" ]]; then
         export PS1="${CYAN}(SAGE) ${L_RED}\u@\H:${BLUE} \w #${NORMAL} "
