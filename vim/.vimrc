@@ -95,7 +95,10 @@ set showmatch
 "set cursorcolumn
 "set mouse+=a
 set hlsearch
-set notitle                " get rid of 'thanks for flying vim' message
+
+let &titleold=getcwd()
+set title                " get rid of 'thanks for flying vim' message
+
 set history=1000
 "set noswapfile
 set hidden
