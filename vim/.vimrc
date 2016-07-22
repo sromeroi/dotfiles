@@ -95,7 +95,7 @@ set showmatch
 "set cursorcolumn
 "set mouse+=a
 set hlsearch
-set title
+set notitle                " get rid of 'thanks for flying vim' message
 set history=1000
 "set noswapfile
 set hidden
