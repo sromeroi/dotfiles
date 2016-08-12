@@ -69,6 +69,7 @@ Plugin 'tomasr/molokai'
 Plugin 'benjaminwhite/Benokai'
 Plugin 'sickill/vim-monokai'
 Plugin 'morhetz/gruvbox'
+Plugin 'matze/vim-move'
 
 call vundle#end()
 filetype plugin indent on
@@ -291,6 +292,9 @@ set viewoptions=folds
 """ Allow save and load tab status on Windows and Mac GUI:
 nmap <leader>S <ESC>:mksession! ~/vim_session<CR>
 nmap <leader>L <ESC>:source ~/vim_session<CR>
+
+""" Move lines/selections with C-j and C-k
+let g:move_key_modifier = 'C'
 
 """ Remove _ from the list of characters that are part of a word (for dw, cw...)
 "set iskeyword-=_
