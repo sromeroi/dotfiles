@@ -11,3 +11,5 @@
 	graphlog = log --pretty=oneline --graph
 	visual = !gitk
 	lg = log --graph --pretty=format:'%C(auto)%h -%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[push]
+	default = simple
