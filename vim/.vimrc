@@ -136,6 +136,9 @@ nnoremap <silent> <leader>ds :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:noh
 """ Hide search results
 nmap <silent> <leader>/ :nohlsearch<CR>
 
+""" Additional ESC key in the Home row
+"inoremap jk <Esc>
+
 """ Tab completion. Use CTRL+V and TAB to insert a real tab.
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
