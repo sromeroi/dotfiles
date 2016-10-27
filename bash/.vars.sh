@@ -31,3 +31,6 @@ then
     source "${GITAWAREPROMPT}/main.sh"
 fi
 
+# aliases
+alias httpserver='python2 -m SimpleHTTPServer 8000'
+
