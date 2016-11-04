@@ -31,6 +31,12 @@ then
     source "${GITAWAREPROMPT}/main.sh"
 fi
 
+if [[ -n "$TMUX" ]]; then
+  bind '"\e[1~":"\eOH"'
+  bind '"\e[4~":"\eOF"'
+fi
+
 # aliases
 alias httpserver='python2 -m SimpleHTTPServer 8000'
+
 
