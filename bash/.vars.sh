@@ -31,6 +31,7 @@ then
     source "${GITAWAREPROMPT}/main.sh"
 fi
 
+# Fix home and end under Tmux 1.8+
 if [[ -n "$TMUX" ]]; then
   bind '"\e[1~":"\eOH"'
   bind '"\e[4~":"\eOF"'
