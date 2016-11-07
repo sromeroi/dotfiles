@@ -125,16 +125,32 @@ autocmd FileType html,css,sass,scss,json
       \ setlocal shiftwidth=2 softtabstop=2
 
 """ See trailing spaces (and remove EOL's $). Toggle with ,h
-set nolist
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
-nmap <leader>h <ESC>:set list!<CR>
+"set nolist
+"set listchars=tab:>.,trail:.,extends:#,nbsp:.
+"nmap <leader>h <ESC>:set list!<CR>
 " Replace tabs with spaces with :retab
 
-""" Remove trailing spaces at EOL
-nnoremap <silent> <leader>ds :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+""" Highlight trailing whitespace
+highlight TrailingWhitespace ctermbg=red guibg=red
+match TrailingWhitespace /\s\+\%#\@<!$/
+nnoremap <Leader>ts1 :match TrailingWhitespace /\s\+\%#\@<!$/<CR>
+nnoremap <Leader>ts0 :match<CR>
+autocmd InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match TrailingWhitespace /\s\+$/
+autocmd ColorScheme * highlight TrailingWhitespace ctermbg=red guibg=darkred
 
-""" Hide search results
-nmap <silent> <leader>/ :nohlsearch<CR>
+""" Highlight tabs
+highlight UnwantedTab ctermbg=red guibg=darkred
+match UnwantedTab /\t/
+nnoremap <Leader>t1 :match UnwantedTab /\t/<CR>
+nnoremap <Leader>t0 :match<CR>
+autocmd ColorScheme * highlight UnwantedTab ctermbg=red guibg=darkred
+
+""" Remove trailing spaces at EOL
+nnoremap <silent> <leader>rt :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+""" Hide search results (Obsoleted by vim-searchant)
+" nmap <silent> <leader>/ :nohlsearch<CR>
 
 """ Additional ESC key in the Home row
 "inoremap jk <Esc>
@@ -230,7 +246,7 @@ nnoremap <C-S-D> :bd!<CR>
 "nmap <leader>n :NERDTreeToggle<CR>
 "map <F1> <ESC>:NERDTreeToggle<CR>
 " autocmd vimenter * NERDTree                 " Open nertree automatically on vim startup
-" autocmd VimEnter * w,incmd p                " Then go to previous (last accessed) window. 
+" autocmd VimEnter * w,incmd p                " Then go to previous (last accessed) window.
 """ Open nerdtree automatically if no file is specified
 " autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -298,6 +314,7 @@ nmap <leader>L <ESC>:source ~/vim_session<CR>
 
 """ Move lines/selections with C-j and C-k
 let g:move_key_modifier = 'C'
+
 
 """ Remove _ from the list of characters that are part of a word (for dw, cw...)
 "set iskeyword-=_
