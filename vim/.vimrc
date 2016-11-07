@@ -135,8 +135,6 @@ highlight TrailingWhitespace ctermbg=red guibg=red
 match TrailingWhitespace /\s\+\%#\@<!$/
 nnoremap <Leader>ts1 :match TrailingWhitespace /\s\+\%#\@<!$/<CR>
 nnoremap <Leader>ts0 :match<CR>
-autocmd InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match TrailingWhitespace /\s\+$/
 autocmd ColorScheme * highlight TrailingWhitespace ctermbg=red guibg=darkred
 
 """ Highlight tabs
