@@ -148,6 +148,7 @@ autocmd ColorScheme * highlight UnwantedTab ctermbg=red guibg=darkred
 
 """ Remove trailing spaces at EOL
 nnoremap <silent> <leader>rt :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap <silent> <leader>dt :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 """ Hide search results (Obsoleted by vim-searchant)
 " nmap <silent> <leader>/ :nohlsearch<CR>
