@@ -218,6 +218,10 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+""" Horizontal scrolling
+map <C-L> 10zl " Scroll 10 characters to the right
+map <C-H> 10zh " Scroll 10 characters to the left
+
 """ Buffer plugins. Use :e file to open a new buffer then :bX to change
 """ to buffer X. With :bd you delete the current buffer and with :buffers
 """ or :ls you can see a buffer list. Use :enew to open a new, empty buffer.
