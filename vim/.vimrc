@@ -60,6 +60,8 @@ Plugin 'AndrewRadev/undoquit.vim'
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'timakro/vim-searchant'
+Plugin 'vimwiki/vimwiki'
+
 " Vundle:
 Plugin 'gmarik/Vundle.vim', {'name': 'vundle'}
 
@@ -196,6 +198,11 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_quiet_messages = { "type": "style" }
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+
+" vimwiki/vimwiki
+" mkdir -p ~/vimwiki/Local && ln -s ~/Dropbox/vimwiki/ ~/vimwiki/Shared
+let g:vimwiki_list = [ {'path': '~/vimwiki/Shared', 'syntax': 'markdown', 'ext': '.md'},
+                     \ {'path': '~/vimwiki/Local',  'syntax': 'markdown', 'ext': '.md'} ]
 
 """ Or :UndoQuit
 let g:undoquit_mapping = '<C-W>u'
