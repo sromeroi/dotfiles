@@ -305,7 +305,7 @@ autocmd BufWinEnter *.module,*.inc,*.h,*.c,*.css,*.js,*.sh,*.php,*.py silent loa
 " ]u: go to parent header (Up). <Plug>(Markdown_MoveToParentHeader)
 set nofoldenable
 let g:vim_markdown_no_default_key_mappings=1
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufRead,BufReadPost *.md set filetype=markdown
 "autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 """ Autosave file folds
