@@ -397,5 +397,5 @@ endif
 
 """ searchant.vim -> set color of the current search ocurrence
 highlight SearchCurrent ctermbg=LightGreen ctermfg=black
-highlight SpecialKey ctermfg=white ctermbg=red guibg=gold2
+highlight SpecialKey ctermfg=gray guibg=gold2
 
