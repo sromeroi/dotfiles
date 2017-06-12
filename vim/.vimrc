@@ -125,9 +125,9 @@ autocmd FileType html,css,sass,scss,json
       \ setlocal shiftwidth=2 softtabstop=2
 
 """ See trailing spaces (and remove EOL's $). Toggle with ,h
-"set nolist
-"set listchars=tab:>.,trail:.,extends:#,nbsp:.
-"nmap <leader>h <ESC>:set list!<CR>
+set list
+set listchars=tab:>·,trail:·,extends:#,nbsp:·
+nmap <leader>h <ESC>:set list!<CR>
 " Replace tabs with spaces with :retab
 
 """ Highlight trailing whitespace
@@ -390,4 +390,5 @@ endif
 
 """ searchant.vim -> set color of the current search ocurrence
 highlight SearchCurrent ctermbg=LightGreen ctermfg=black
+highlight SpecialKey ctermfg=white ctermbg=red guibg=gold2
 
