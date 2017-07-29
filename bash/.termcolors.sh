@@ -31,7 +31,7 @@ else
 fi
 
 # Home's laptop:
-if [[ "${HOSTNAME}" == "compiler" ]] || [[ "${HOSTNAME}" == "hpserver" ;
+if [[ "${HOSTNAME}" == "compiler" ]] || [[ "${HOSTNAME}" == "hpserver" ]] ;
 then
     if [[ "${USER}" == "sromero" ]]; then
         export PS1="${L_GREEN}\u@\H:${BLUE} \w \$${NORMAL} "
