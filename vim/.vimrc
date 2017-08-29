@@ -355,6 +355,23 @@ vnoremap > >gv
 """ Make Y yank everything from the cursor to the end of the line (like C or D).
 noremap Y y$
 
+
+""" START Persistent undo
+let vimDir = '$HOME/.vim'
+let &runtimepath.=','.vimDir
+
+" Keep undo history across sessions by storing it in a file
+if has('persistent_undo')
+    let myUndoDir = expand(vimDir . '/undo')
+    call system('mkdir ' . myUndoDir)
+    let &undodir = myUndoDir
+    set undofile                " Save undo's after file closes
+    set undolevels=1000         " How many undos
+    set undoreload=10000        " number of lines to save for undo
+endif
+""" END Persistent undo
+
+
 """ Colours
 if &t_Co > 2 || has("gui_running")
     syntax on
