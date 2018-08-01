@@ -25,9 +25,9 @@ USER="$USER"
 
 # Default prompt for unknown machines:
 if [[ "${USER}" == "root" ]]; then
-    export PS1="${L_RED}\u@\H:${BLUE} \w \$${NORMAL} "
+    export PS1="${L_RED}\u@\H:${BLUE} \w #${NORMAL} "
 else
-    export PS1="${L_GREEN}\u@\H:${BLUE} \w \$${NORMAL} "
+    export PS1="${L_GREEN}\u@\H:${BLUE} \w #${NORMAL} "
 fi
 
 # Home's laptop:
