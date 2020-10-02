@@ -30,7 +30,7 @@ call vundle#begin()
 
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-Plugin 'myusuf3/numbers.vim'
+" Plugin 'myusuf3/numbers.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
@@ -89,7 +89,7 @@ set tabstop=4
 set shiftwidth=4
 "set softtabstop=4
 set laststatus=2
-set number
+set nonumber
 set wildmenu
 set wildignore=*.swp,*.bak,*.pyc,*.class
 "set incsearch
@@ -128,7 +128,7 @@ autocmd FileType html,css,sass,scss,json
 
 """ See trailing spaces (and remove EOL's $). Toggle with ,h
 set list
-set listchars=tab:>·,trail:·,extends:#,nbsp:·
+set listchars=tab:->,trail:\ ,extends:#,nbsp:·
 nmap <leader>h <ESC>:set list!<CR>
 " Replace tabs with spaces with :retab
 
@@ -415,4 +415,8 @@ endif
 """ searchant.vim -> set color of the current search ocurrence
 highlight SearchCurrent ctermbg=LightGreen ctermfg=black
 highlight SpecialKey ctermfg=gray guibg=gold2
+
+""" Hilight extraspaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
 
