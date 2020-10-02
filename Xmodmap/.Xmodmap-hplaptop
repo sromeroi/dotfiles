@@ -1,0 +1,11 @@
+keycode  12 = 3 periodcentered 3 periodcentered numbersign sterling numbersign
+keycode  13 = 4 dollar 4 dollar asciitilde dollar asciitilde
+keycode  14 = 5 percent 5 percent onehalf threeeighths onehalf
+keycode  16 = 7 slash 7 slash braceleft seveneighths braceleft
+keycode  21 = exclamdown questiondown exclamdown questiondown dead_tilde asciitilde dead_tilde
+keycode  26 = e E e E EuroSign cent EuroSign
+keycode  47 = ntilde Ntilde ntilde Ntilde braceleft dead_doubleacute asciitilde
+keycode  48 = dead_acute dead_diaeresis dead_acute dead_diaeresis braceright braceright braceright
+keycode  51 = Return ccedilla ccedilla Ccedilla braceright dead_breve braceright
+keycode  54 = c C c C cent copyright cent
+keycode  60 = period colon period colon periodcentered division periodcentered
