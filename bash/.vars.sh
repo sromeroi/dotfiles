@@ -38,6 +38,7 @@ if [[ -n "$TMUX" ]]; then
 fi
 
 # aliases
-alias httpserver='python2 -m SimpleHTTPServer 8000'
+#alias httpserver='python2 -m SimpleHTTPServer 8000'
+alias httpserver='python3 -m http.server 8000'
 
 

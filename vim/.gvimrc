@@ -42,7 +42,7 @@ set columns=120
 set t_Co=256
 set background=dark
 set colorcolumn=0
-set guifont=Inconsolata-g\ Medium\ 13,DejaVu\ Sans\ Mono\ 13
+"set guifont=Consolas:h13
 
 " Set font on Windows, Mac, Linux ...
 if has("win32") || has("win64")
@@ -60,15 +60,6 @@ if has("win32") || has("win64")
 
 elseif has("gui_gtk2")
 
-    set guifont=Inconsolata-g\ Medium\ 13,DejaVu\ Sans\ Mono\ 13
-
-elseif has("gui_macvim")
-
-    set lines=45
-    set columns=110
-    set linespace=1
-    set ruler
-    set guifont=Inconsolata:h17
-
+    set guifont=Consolas:h12
 endif
 

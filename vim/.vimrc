@@ -30,7 +30,7 @@ call vundle#begin()
 
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-Plugin 'myusuf3/numbers.vim'
+"Plugin 'myusuf3/numbers.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
@@ -89,7 +89,7 @@ set tabstop=4
 set shiftwidth=4
 "set softtabstop=4
 set laststatus=2
-set number
+"set number
 set wildmenu
 set wildignore=*.swp,*.bak,*.pyc,*.class
 "set incsearch
