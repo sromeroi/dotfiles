@@ -89,11 +89,8 @@ set tabstop=4
 set shiftwidth=4
 "set softtabstop=4
 set laststatus=2
-<<<<<<< HEAD
 "set number
-=======
 set nonumber
->>>>>>> 792b8cd0fe85c6cb21afe51851bb4fb5fdadb3de
 set wildmenu
 set wildignore=*.swp,*.bak,*.pyc,*.class
 "set incsearch
