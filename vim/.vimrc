@@ -89,7 +89,11 @@ set tabstop=4
 set shiftwidth=4
 "set softtabstop=4
 set laststatus=2
+<<<<<<< HEAD
 "set number
+=======
+set nonumber
+>>>>>>> 792b8cd0fe85c6cb21afe51851bb4fb5fdadb3de
 set wildmenu
 set wildignore=*.swp,*.bak,*.pyc,*.class
 "set incsearch
@@ -128,7 +132,7 @@ autocmd FileType html,css,sass,scss,json
 
 """ See trailing spaces (and remove EOL's $). Toggle with ,h
 set list
-set listchars=tab:>·,trail:·,extends:#,nbsp:·
+set listchars=tab:->,trail:\ ,extends:#,nbsp:·
 nmap <leader>h <ESC>:set list!<CR>
 " Replace tabs with spaces with :retab
 
@@ -415,4 +419,8 @@ endif
 """ searchant.vim -> set color of the current search ocurrence
 highlight SearchCurrent ctermbg=LightGreen ctermfg=black
 highlight SpecialKey ctermfg=gray guibg=gold2
+
+""" Hilight extraspaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
 
