@@ -76,6 +76,8 @@ Plugin 'matze/vim-move'
 call vundle#end()
 filetype plugin indent on
 
+let g:snipMate = { 'snippet_version' : 1 }
+
 """ Generic options
 set nobackup
 set ruler
